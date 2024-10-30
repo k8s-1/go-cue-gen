@@ -3,5 +3,7 @@ import (
 )
 
 //environment: string @tag(env)
-x: "hello"
-y: "bye"
+someval: {
+	x: string & "hello",
+	y: string & "bye",
+}
