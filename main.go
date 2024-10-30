@@ -16,7 +16,7 @@ func main() {
 		Tags: []string{"dev"},
 	}
 
-  filePath := "example/example2.cue"
+  filePath := "./example/example2.cue"
 
 	insts := load.Instances([]string{filePath}, config)
 	if len(insts) == 0 || insts[0].Err != nil {
