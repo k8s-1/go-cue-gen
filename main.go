@@ -7,7 +7,7 @@ import (
 	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/encoding/yaml"
-	"cuelang.org/go/cue/ast"
+	// "cuelang.org/go/cue/ast"
 )
 
 func main() {
@@ -15,14 +15,14 @@ func main() {
 
 	config := &load.Config{
 		Tags: []string{"dev"},
-		TagVars: map[string]load.TagVar{
-			"env": {
-				Func: func() (ast.Expr, error) {
-					return ast.NewString("somevalue"), nil
-				},
-				Description: "A tag variable for key with value 'somevalue'",
-			},
-		},
+		// TagVars: map[string]load.TagVar{
+		// 	"env": {
+		// 		Func: func() (ast.Expr, error) {
+		// 			return ast.NewString("somevalue"), nil
+		// 		},
+		// 		Description: "A tag variable for key with value 'somevalue'",
+		// 	},
+		// },
 	}
 
 	filePath := "./main.cue"
