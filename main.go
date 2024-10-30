@@ -16,7 +16,9 @@ func main() {
 		Tags: []string{"dev"},
 	}
 
-	insts := load.Instances([]string{"."}, config)
+  filePath := "example/example2.cue"
+
+	insts := load.Instances([]string{filePath}, config)
 	if len(insts) == 0 || insts[0].Err != nil {
 		log.Fatalf("error loading CUE instances: %v", insts[0].Err)
 	}
