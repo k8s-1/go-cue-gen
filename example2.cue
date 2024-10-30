@@ -1,3 +1,5 @@
+@if(dev)
+
 package example
 
 x: [4, 4, 4]
