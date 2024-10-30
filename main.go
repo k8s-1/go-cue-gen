@@ -14,11 +14,11 @@ func main() {
 	ctx := cuecontext.New()
 
 	config := &load.Config{
-		Tags: []string{"dev"}, // Use the 'dev' tag
+		Tags: []string{"dev", "env"}, // Use the 'dev' tag
 		TagVars: map[string]load.TagVar{
 			"env": {
 				Func: func() (ast.Expr, error) {
-					return ast.NewString("somevalue"), nil // Value assigned for 'env'
+					return ast.NewString("env"), nil // Value assigned for 'env'
 				},
 			},
 		},
