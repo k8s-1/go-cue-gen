@@ -18,9 +18,9 @@ func main() {
 		TagVars: map[string]load.TagVar{
 			"env": {
 				Func: func() (ast.Expr, error) {
-          return ast.NewString("somevalue"), nil
+					return ast.NewString("somevalue"), nil
 				},
-				Description: "A tag variable for key with value 'value'",
+				Description: "A tag variable for key with value 'somevalue'",
 			},
 		},
 	}
@@ -33,12 +33,16 @@ func main() {
 	}
 
 	v := ctx.BuildInstance(insts[0])
-	fmt.Printf("%v\n", v)
+	if v.Err() != nil {
+		log.Fatalf("error building instance: %v", v.Err())
+	}
+
+	fmt.Printf("CUE Value: %v\n", v)
 
 	b, err := yaml.Encode(v)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("error encoding to YAML: %v", err)
 	}
 
-	fmt.Printf("%s\n", string(b))
+	fmt.Printf("YAML Output:\n%s\n", string(b))
 }
