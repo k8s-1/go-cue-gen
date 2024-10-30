@@ -15,13 +15,6 @@ func main() {
 
 	config := &load.Config{
 		Tags: []string{"dev", "env=value"}, // Use the 'dev' tag
-		// TagVars: map[string]load.TagVar{
-		// 	"env": {
-		// 		Func: func() (ast.Expr, error) {
-		// 			return ast.NewString("env"), nil // Value assigned for 'env'
-		// 		},
-		// 	},
-		// },
 	}
 
 	filePath := "./main.cue"
