@@ -16,9 +16,9 @@ func main() {
 	config := &load.Config{
 		Tags: []string{"dev"},
 		TagVars: map[string]load.TagVar{
-			"key": {
+			"env": {
 				Func: func() (ast.Expr, error) {
-          return ast.NewString("value"), nil
+          return ast.NewString("somevalue"), nil
 				},
 				Description: "A tag variable for key with value 'value'",
 			},
