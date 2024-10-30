@@ -14,11 +14,11 @@ func main() {
 	ctx := cuecontext.New()
 
 	config := &load.Config{
-		Tags: []string{"dev"},
+		Tags: []string{"dev"}, // Use the 'dev' tag
 		TagVars: map[string]load.TagVar{
 			"env": {
 				Func: func() (ast.Expr, error) {
-					return ast.NewString("somevalue"), nil
+					return ast.NewString("somevalue"), nil // Value assigned for 'env'
 				},
 			},
 		},
@@ -26,6 +26,7 @@ func main() {
 
 	filePath := "./main.cue"
 
+	// Load the instance
 	insts := load.Instances([]string{filePath}, config)
 	if len(insts) == 0 || insts[0].Err != nil {
 		log.Fatalf("error loading CUE instances: %v", insts[0].Err)
@@ -36,12 +37,15 @@ func main() {
 		log.Fatalf("error building instance: %v", v.Err())
 	}
 
+	// Print the instance value
 	fmt.Printf("CUE Value: %v\n", v)
 
+	// Encode the instance to YAML
 	b, err := yaml.Encode(v)
 	if err != nil {
 		log.Fatalf("error encoding to YAML: %v", err)
 	}
 
+	// Print the YAML output
 	fmt.Printf("YAML Output:\n%s\n", string(b))
 }
