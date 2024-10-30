@@ -12,7 +12,7 @@ import (
 
 func main() {
 	ctx := cuecontext.New()
-	insts := load.Instances([]string{"-t", "dev"}, nil)
+	insts := load.Instances([]string{"."}, nil)
 	v := ctx.BuildInstance(insts[0])
 	fmt.Printf("%v\n", v)
 
