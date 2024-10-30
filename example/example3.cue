@@ -3,5 +3,4 @@
 package example
 
 // -t env=value
-//environment: string @tag(env)
-ok: "what"
+environment: string @tag(env)
