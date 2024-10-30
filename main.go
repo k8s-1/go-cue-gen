@@ -6,7 +6,6 @@ import (
 
 	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
-
 	"cuelang.org/go/encoding/yaml"
 )
 
