@@ -12,7 +12,16 @@ import (
 
 func main() {
 	ctx := cuecontext.New()
-	insts := load.Instances([]string{"."}, nil)
+
+	config := &load.Config{
+		Tags: []string{"dev"},
+	}
+
+	insts := load.Instances([]string{"."}, config)
+	if len(insts) == 0 || insts[0].Err != nil {
+		log.Fatalf("error loading CUE instances: %v", insts[0].Err)
+	}
+
 	v := ctx.BuildInstance(insts[0])
 	fmt.Printf("%v\n", v)
 
@@ -21,5 +30,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-  fmt.Printf("%s\n", string(b))
+	fmt.Printf("%s\n", string(b))
 }
