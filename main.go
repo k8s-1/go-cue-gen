@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log"
 
+	"cuelang.org/go/cue/ast"
 	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/encoding/yaml"
-	"cuelang.org/go/cue/ast"
 )
 
 func main() {
