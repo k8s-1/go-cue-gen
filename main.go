@@ -25,7 +25,7 @@ func main() {
 		},
 	}
 
-	filePath := "./example/nopackage.cue"
+	filePath := "./main.cue"
 
 	insts := load.Instances([]string{filePath}, config)
 	if len(insts) == 0 || insts[0].Err != nil {
