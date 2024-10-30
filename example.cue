@@ -1,3 +1,5 @@
+@if(prod)
+
 package example
 
 l: [1, 2, 3]
