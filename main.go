@@ -14,7 +14,7 @@ func main() {
 	ctx := cuecontext.New()
 
 	config := &load.Config{
-		Tags: []string{"dev", "env"}, // Use the 'dev' tag
+		Tags: []string{"dev"}, // Use the 'dev' tag
 		TagVars: map[string]load.TagVar{
 			"env": {
 				Func: func() (ast.Expr, error) {
